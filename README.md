@@ -1,6 +1,6 @@
 # Switch-to.EU Newsletter
 
-Static newsletter archive deployed on Sliplane at newsletter.switch-to.eu
+Static newsletter archive deployed at newsletter.switch-to.eu
 
 ## 📁 Project Structure
 
@@ -12,38 +12,21 @@ Static newsletter archive deployed on Sliplane at newsletter.switch-to.eu
 │   └── assets/
 │       └── fonts/                 # Local font files (woff2)
 ├── Dockerfile                     # Container configuration
-├── nginx.conf                     # Web server configuration (HTTPS-enforced)
+├── nginx.conf                     # Web server configuration
 ├── .dockerignore                  # Docker build exclusions
 └── README.md                      # This file
 ```
 
-## 🎨 Local Fonts
-
-We use self-hosted fonts for better privacy and performance:
-- **Hanken Grotesk** (SemiBold, Bold, Italic variants)
-- **Bricolage Grotesque** (ExtraBold)
-
-No external font dependencies (Google Fonts removed for privacy).
-
-## 🔄 Continuous Deployment
-
-Every push to the `main` branch automatically:
-1. Triggers a new build on Sliplane
-2. Builds the Docker container (copies only `public/` folder)
-3. Deploys to production
-4. Updates newsletter.switch-to.eu
 
 ## 📝 Adding New Newsletters
 
 1. Create new HTML file in `/public/newsletters/` folder
 2. Update `/public/index.html` to include the new newsletter
 3. Commit and push changes
-4. Sliplane automatically deploys the update
 
 ## 🌐 Production URL
 
 - **Live site:** https://newsletter.switch-to.eu
-- **Health check:** https://newsletter.switch-to.eu/health
 - **GitHub repo:** https://github.com/switch-to-eu/newsletter
 
 ## 🛠 Local Development
