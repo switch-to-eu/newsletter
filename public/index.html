@@ -7,17 +7,54 @@
       content="width=device-width, initial-scale=1.0"
     />
     <title>Switch-to.EU Newsletter Archive</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Hanken+Grotesk:ital,wght@0,400;0,600;0,700;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
     <style>
+      /* Local font declarations */
+      @font-face {
+        font-family: 'Hanken Grotesk';
+        src: url('https://newsletter.switch-to.eu/assets/fonts/HankenGrotesk-SemiBold.woff2')
+          format('woff2');
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Hanken Grotesk';
+        src: url('https://newsletter.switch-to.eu/assets/fonts/HankenGrotesk-SemiBoldItalic.woff2')
+          format('woff2');
+        font-weight: 600;
+        font-style: italic;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Hanken Grotesk';
+        src: url('https://newsletter.switch-to.eu/assets/fonts/HankenGrotesk-Bold.woff2')
+          format('woff2');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Hanken Grotesk';
+        src: url('https://newsletter.switch-to.eu/assets/fonts/HankenGrotesk-BoldItalic.woff2')
+          format('woff2');
+        font-weight: 700;
+        font-style: italic;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Bricolage Grotesque';
+        src: url('https://newsletter.switch-to.eu/assets/fonts/BricolageGrotesque-ExtraBold.woff2')
+          format('woff2');
+        font-weight: 800;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* Reset and base styles */
       * {
         margin: 0;
         padding: 0;
@@ -154,7 +191,7 @@
       <ul class="newsletter-list">
         <li class="newsletter-item">
           <a
-            href="/newsletters/001_first.html"
+            href="https://newsletter.switch-to.eu/newsletters/001_first.html"
             class="newsletter-link"
           >
             <div class="newsletter-title">
