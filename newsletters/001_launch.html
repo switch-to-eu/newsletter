@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Switch-to.EU Newsletter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Hanken+Grotesk:ital,wght@0,400;0,600;0,700;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Reset and base styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Hanken Grotesk', -apple-system,
+          BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        line-height: 1.6;
+        color: #383838;
+        background-color: #fefbf9;
+      }
+
+      /* Container styles */
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      /* Header styles */
+      .header {
+        background-color: #fefbf9;
+        padding: 24px;
+        border-bottom: 1px solid #e5e7eb;
+        text-align: center;
+      }
+
+      .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 8px;
+      }
+
+      .europe-svg {
+        width: 40px;
+        height: auto;
+        flex-shrink: 0;
+      }
+
+      .logo {
+        font-family: 'Bricolage Grotesque', serif;
+        font-weight: 800;
+        font-size: 28px;
+        color: #1a3c5a;
+        text-decoration: none;
+        margin: 0;
+        display: inline-block;
+      }
+
+      .tagline {
+        font-size: 14px;
+        color: #334155;
+        margin: 0;
+      }
+
+      /* Content styles */
+      .content {
+        padding: 32px 24px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: 'Bricolage Grotesque', serif;
+        font-weight: 800;
+        color: #1a3c5a;
+        margin-bottom: 16px;
+      }
+
+      h1 {
+        font-size: 32px;
+        line-height: 1.2;
+        margin-bottom: 24px;
+      }
+
+      h2 {
+        font-size: 24px;
+        line-height: 1.3;
+        margin-top: 32px;
+      }
+
+      h3 {
+        font-size: 20px;
+        line-height: 1.4;
+        margin-top: 24px;
+      }
+
+      p {
+        margin-bottom: 16px;
+        color: #383838;
+        font-size: 16px;
+      }
+
+      /* Link styles */
+      a {
+        color: #1a3c5a;
+        text-decoration: underline;
+        font-weight: 600;
+      }
+
+      a:hover {
+        color: #64a5f6;
+      }
+
+      /* Button styles */
+      .btn {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #1a3c5a;
+        color: #ffffff !important;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 16px;
+        margin: 16px 0;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #64a5f6;
+      }
+
+      .btn-secondary {
+        background-color: #feb5a7;
+        color: #1a3c5a !important;
+      }
+
+      .btn-secondary:hover {
+        background-color: #ff8a74;
+      }
+
+      /* Service card styles */
+      .service-card {
+        background-color: #e9f4fd;
+        border-radius: 12px;
+        padding: 20px;
+        margin: 16px 0;
+        border-left: 4px solid #1a3c5a;
+      }
+
+      .service-card.pink-bg {
+        background-color: #ffeae5;
+      }
+
+      .service-card.green-bg {
+        background-color: #e8f7ed;
+      }
+
+      .service-card h3 {
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+
+      .service-card p {
+        margin-bottom: 8px;
+        font-size: 14px;
+      }
+
+      /* Badge styles */
+      .badge {
+        display: inline-block;
+        padding: 4px 12px;
+        background-color: #a2d4a8;
+        color: #1a3c5a;
+        font-size: 12px;
+        font-weight: 600;
+        border-radius: 20px;
+        margin: 4px 0;
+      }
+
+      /* List styles */
+      ul {
+        margin-bottom: 16px;
+        padding-left: 20px;
+      }
+
+      li {
+        margin-bottom: 8px;
+        color: #383838;
+      }
+
+      /* Footer styles */
+      .footer {
+        background-color: #f8f9fa;
+        padding: 24px;
+        border-top: 1px solid #e5e7eb;
+        text-align: center;
+      }
+
+      .footer p {
+        font-size: 14px;
+        color: #334155;
+        margin-bottom: 8px;
+      }
+
+      .footer a {
+        color: #334155;
+        font-weight: 400;
+      }
+
+      .social-links {
+        margin: 16px 0;
+      }
+
+      .social-links a {
+        color: #1a3c5a;
+        text-decoration: none;
+        margin: 0 12px;
+        font-weight: 600;
+      }
+
+      /* Responsive styles */
+      @media (max-width: 640px) {
+        .container {
+          margin: 16px;
+        }
+
+        .content {
+          padding: 24px 16px;
+        }
+
+        h1 {
+          font-size: 28px;
+        }
+
+        h2 {
+          font-size: 22px;
+        }
+
+        .header-content {
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .europe-svg {
+          width: 35px;
+        }
+
+        .logo {
+          font-size: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="header">
+        <div class="header-content">
+          <img
+            src="https://www.switch-to.eu/images/europe.svg"
+            alt="Europe"
+            class="europe-svg"
+          />
+          <a href="https://switch-to.eu" class="logo">switch-to.eu</a>
+        </div>
+        <p class="tagline">
+          Moving away from big tech? Make the switch!
+        </p>
+      </div>
+
+      <!-- Main Content -->
+      <div class="content">
+        <h1>🇪🇺 Your Monthly EU Tech Digest</h1>
+
+        <p>Hello Digital Freedom Fighter!</p>
+
+        <p>
+          Welcome to your monthly update from
+          <strong>Switch-to.EU</strong>! This month, we're excited to
+          share some amazing new EU alternatives that will help you
+          take back control of your digital life.
+        </p>
+
+        <h2>🆕 New EU Services Added</h2>
+
+        <div class="service-card">
+          <h3>🌐 Vivaldi Browser</h3>
+          <p><strong>Replaces:</strong> Chrome, Firefox, Safari</p>
+          <p>
+            Norwegian-developed privacy-focused browser with extensive
+            customization options and built-in ad/tracker blocking.
+          </p>
+          <span class="badge">🇳🇴 Norwegian</span>
+          <span class="badge">Privacy-first</span>
+          <br />
+          <a
+            href="https://switch-to.eu/en/services/eu/vivaldi"
+            class="btn"
+            >Learn More</a
+          >
+        </div>
+
+        <div class="service-card pink-bg">
+          <h3>☁️ Proton Drive</h3>
+          <p>
+            <strong>Replaces:</strong> Google Drive, iCloud, OneDrive
+          </p>
+          <p>
+            Swiss encrypted cloud storage with end-to-end encryption
+            and seamless integration with the Proton ecosystem.
+          </p>
+          <span class="badge">🇨🇭 Swiss</span>
+          <span class="badge">End-to-end encrypted</span>
+          <br />
+          <a
+            href="https://switch-to.eu/en/services/eu/proton-drive"
+            class="btn"
+            >Learn More</a
+          >
+        </div>
+
+        <div class="service-card green-bg">
+          <h3>🐘 Mastodon</h3>
+          <p>
+            <strong>Replaces:</strong> Twitter/X, Facebook, Instagram
+          </p>
+          <p>
+            German-originated decentralized social media platform with
+            no ads, no algorithms, and community-owned servers.
+          </p>
+          <span class="badge">🇩🇪 German</span>
+          <span class="badge">Decentralized</span>
+          <br />
+          <a
+            href="https://switch-to.eu/en/services/eu/mastodon"
+            class="btn"
+            >Learn More</a
+          >
+        </div>
+
+        <div class="service-card">
+          <h3>💾 kDrive</h3>
+          <p><strong>Replaces:</strong> Dropbox, Box, Google Drive</p>
+          <p>
+            Swiss sovereign cloud storage solution with GDPR
+            compliance and enterprise-grade security for businesses
+            and individuals.
+          </p>
+          <span class="badge">🇨🇭 Swiss</span>
+          <span class="badge">Sovereign cloud</span>
+          <br />
+          <a
+            href="https://switch-to.eu/en/services/eu/kdrive"
+            class="btn"
+            >Learn More</a
+          >
+        </div>
+
+        <div class="service-card pink-bg">
+          <h3>📧 Infomaniak Mail</h3>
+          <p><strong>Replaces:</strong> Gmail, Outlook, Yahoo Mail</p>
+          <p>
+            Swiss professional email service with 100% renewable
+            energy hosting and comprehensive collaboration tools.
+          </p>
+          <span class="badge">🇨🇭 Swiss</span>
+          <span class="badge">Eco-friendly</span>
+          <br />
+          <a
+            href="https://switch-to.eu/en/services/eu/infomaniak-mail"
+            class="btn"
+            >Learn More</a
+          >
+        </div>
+
+        <div class="service-card green-bg">
+          <h3>🔒 Filen</h3>
+          <p>
+            <strong>Replaces:</strong> Google Drive, Dropbox, OneDrive
+          </p>
+          <p>
+            German zero-knowledge cloud storage with client-side
+            encryption and generous free tier for secure file sharing.
+          </p>
+          <span class="badge">🇩🇪 German</span>
+          <span class="badge">Zero-knowledge</span>
+          <br />
+          <a
+            href="https://switch-to.eu/en/services/eu/filen"
+            class="btn"
+            >Learn More</a
+          >
+        </div>
+
+        <h2>📰 We Made the News!</h2>
+
+        <p>
+          Our official launch made waves in Belgian media! The
+          response has been incredible, with major news outlets
+          covering our mission to help Europeans reclaim their digital
+          sovereignty.
+        </p>
+
+        <div class="service-card">
+          <h3>🇧🇪 Belgian Media Coverage</h3>
+          <p style="margin-bottom: 16px">
+            <strong>"We pay with our privacy"</strong> - that's how
+            Belgian journalists described the hidden cost of Big Tech
+            services. Here's where our story was featured:
+          </p>
+
+          <ul style="margin-bottom: 16px; font-size: 14px">
+            <li>
+              <strong
+                ><a
+                  href="https://www.gva.be/binnenland/antwerpse-broers-lanceren-website-die-switch-helpt-maken-van-amerikaanse-techgiganten-als-google-of-whatsapp-naar-europese-alternatieven-we-betalen-met-onze-privacy/67443663.html"
+                  >Gazet van Antwerpen</a
+                ></strong
+              >
+              - "Antwerp brothers help switch from American tech
+              giants"
+            </li>
+            <li>
+              <strong
+                ><a
+                  href="https://www.standaard.be/podcast/switch-to.eu-het-platform-dat-alternatieven-biedt-voor-de-big-tech-uit-de-vs/68395325.html"
+                  >De Standaard Podcast</a
+                ></strong
+              >
+              - "Switch-to.eu: The platform offering Big Tech
+              alternatives"
+            </li>
+            <li>
+              <strong
+                ><a
+                  href="https://www.hln.be/internet/weg-van-whatsapp-en-gmail-antwerpse-broers-maken-overstap-naar-europese-alternatieven-makkelijker-met-website~a57fbc3b/"
+                  >Het Laatste Nieuws</a
+                ></strong
+              >
+              - "Away from WhatsApp and Gmail: making the switch
+              easier"
+            </li>
+            <li>
+              <strong
+                ><a
+                  href="https://www.made-in.be/antwerpen/antwerpse-broers-lanceren-website-die-switch-helpt-maken-van-big-tech-naar-europese-alternatieven-we-betalen-met-onze-privacy/"
+                  >Made in Belgium</a
+                ></strong
+              >
+              - "From Big Tech to European alternatives"
+            </li>
+          </ul>
+
+          <p
+            style="
+              margin-bottom: 8px;
+              font-size: 14px;
+              font-style: italic;
+            "
+          >
+            The coverage highlights why more Europeans are seeking
+            alternatives to American tech giants and how Switch-to.EU
+            is making the transition easier for everyone.
+          </p>
+        </div>
+
+        <h2>🎉 Thank You for an Amazing Launch Event!</h2>
+
+        <p>
+          Thanks to everyone who joined
+          <strong>"DO THE TECH SWITCH"</strong> - our official launch
+          event! The energy was incredible and we had in-depth
+          discussions about big tech and how we can support small &
+          local tech instead.
+        </p>
+
+        <div class="service-card pink-bg">
+          <h3>🎤 Big Up to Our Amazing Speakers</h3>
+          <p style="margin-bottom: 16px">
+            A huge thank you to the thought leaders who shared their
+            insights on digital sovereignty and European tech
+            alternatives:
+          </p>
+
+          <ul style="margin-bottom: 16px; font-size: 14px">
+            <li>
+              <strong>Jannes Van de maele</strong> - Leading voice in
+              European tech independence
+            </li>
+            <li>
+              <strong>Stijn Vanhandsaeme</strong> - Expert on digital
+              privacy and security
+            </li>
+            <li>
+              <strong>Vincent Peters</strong> - Co-founder of
+              Switch-to.EU
+            </li>
+          </ul>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 12px;
+              margin-bottom: 16px;
+            "
+          >
+            <img
+              src="../assets/event_1.jpg"
+              alt="DO THE TECH SWITCH Event Photo 1"
+              style="
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                object-fit: cover;
+              "
+            />
+            <img
+              src="../assets/event_2.jpg"
+              alt="DO THE TECH SWITCH Event Photo 2"
+              style="
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                object-fit: cover;
+              "
+            />
+            <img
+              src="../assets/event_3.jpg"
+              alt="DO THE TECH SWITCH Event Photo 3"
+              style="
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                object-fit: cover;
+              "
+            />
+            <img
+              src="../assets/event_4.jpg"
+              alt="DO THE TECH SWITCH Event Photo 4"
+              style="
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                object-fit: cover;
+              "
+            />
+          </div>
+        </div>
+
+        <p style="margin-bottom: 24px">
+          Missed the event? Don't worry - the momentum is just
+          beginning. Every day more Europeans are joining the movement
+          to reclaim their digital independence!
+        </p>
+
+        <h2>⚡ What's the Easiest Switch You Can Make Right Now?</h2>
+
+        <p style="margin-bottom: 16px">
+          Starting your digital sovereignty journey? Your browser is
+          the
+          <strong>easiest and fastest switch you can make</strong>
+          with minimal impact on your daily workflow. It takes just 5
+          minutes and immediately improves your privacy!
+        </p>
+
+        <p style="margin-bottom: 16px">
+          <strong>TAre you using Chrome?</strong> Google tracks every
+          click, search, and website you visit to build detailed
+          profiles for advertisers. By switching to a European
+          browser, you immediately stop feeding the surveillance
+          machine and start protecting your personal data.
+        </p>
+        <div
+          style="
+            background-color: #e8f7ed;
+            padding: 24px;
+            border-radius: 12px;
+            border-left: 4px solid #22c55e;
+            margin: 24px 0;
+          "
+        >
+          <h3 style="margin-top: 0; color: #22c55e">
+            🌐 Switch to a European-Friendly Browser!
+          </h3>
+
+          <p style="margin-bottom: 16px">
+            <strong>Why browsers first?</strong>
+          </p>
+          <ul style="margin-bottom: 16px">
+            <li>No data migration required</li>
+            <li>Works with all your existing accounts</li>
+            <li>Instant privacy benefits</li>
+            <li>Easy to try risk-free</li>
+          </ul>
+
+          <p style="margin-bottom: 16px">
+            <strong>Our top recommendations:</strong>
+          </p>
+
+          <div
+            style="
+              display: flex;
+              gap: 16px;
+              flex-wrap: wrap;
+              margin-bottom: 16px;
+            "
+          >
+            <a
+              href="https://switch-to.eu/en/services/eu/vivaldi"
+              class="btn"
+              style="
+                margin: 0;
+                flex: 1;
+                min-width: 140px;
+                text-align: center;
+              "
+              >🇳🇴 Vivaldi</a
+            >
+            <a
+              href="https://switch-to.eu/en/services/eu/brave"
+              class="btn btn-secondary"
+              style="
+                margin: 0;
+                flex: 1;
+                min-width: 140px;
+                text-align: center;
+              "
+              >🦁 Brave</a
+            >
+          </div>
+
+          <p
+            style="
+              margin-bottom: 0;
+              font-style: italic;
+              font-size: 14px;
+            "
+          >
+            Both browsers automatically import your bookmarks,
+            passwords, and settings from Chrome, Firefox, or Safari.
+            Make the switch today!
+          </p>
+        </div>
+
+        <h2>🤝 Want to Help Switch-to.EU Grow?</h2>
+
+        <p>
+          We're building the largest directory of European digital
+          alternatives, and we need your help! Here are the key areas
+          where we're looking for contributors:
+        </p>
+
+        <div class="service-card">
+          <h3>🌍 Translation Help</h3>
+          <p>
+            We're expanding to serve users across all European
+            languages! We're particularly looking for
+            <strong>native German and French speakers</strong> who
+            want to help translate our service descriptions and
+            migration guides.
+          </p>
+          <p style="margin-bottom: 8px; font-size: 14px">
+            <strong>Also needed:</strong> Italian, Spanish, Dutch,
+            Polish, Swedish, and all other EU languages.
+          </p>
+        </div>
+
+        <div class="service-card pink-bg">
+          <h3>📝 Migration Guide Writers</h3>
+          <p>
+            Share your experience! Help others make the switch by
+            writing step-by-step migration guides for services you've
+            successfully transitioned to.
+          </p>
+        </div>
+
+        <div class="service-card green-bg">
+          <h3>🔍 European Service Hunters</h3>
+          <p>
+            Know an amazing European alternative we haven't covered
+            yet? Help us discover and add new services to our growing
+            database.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3>🧪 Content Testers</h3>
+          <p>
+            Help us improve by testing our current migration guides
+            and service descriptions. Your feedback helps ensure
+            accuracy and usability.
+          </p>
+        </div>
+
+        <p style="margin-top: 24px">
+          Ready to contribute? Every contribution, no matter how
+          small, helps Europeans reclaim their digital sovereignty!
+        </p>
+
+        <a
+          href="https://switch-to.eu/contribute"
+          class="btn btn-secondary"
+          >Get Involved</a
+        >
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <div class="social-links">
+          <a href="https://github.com/switch-to-eu/switch-to.eu"
+            >GitHub</a
+          >
+          <a href="https://switch-to.eu/about">About</a>
+          <a href="https://switch-to.eu/contribute">Contribute</a>
+        </div>
+
+        <p>
+          © 2024 switch-to.eu - A project by
+          <a
+            href="https://www.vinnie.studio"
+            style="color: #3b82f6; font-weight: 600"
+            >Studio Vinnie</a
+          >
+          and
+          <a
+            href="https://www.mvpeters.com/"
+            style="color: #3b82f6; font-weight: 600"
+            >MVPeters</a
+          >
+        </p>
+
+        <p>Empowering digital sovereignty across Europe 🇪🇺</p>
+
+        <p style="font-size: 12px; margin-top: 16px">
+          <a href="{{unsubscribeUrl}}">Unsubscribe</a> |
+          <a href="{{webviewUrl}}">View in browser</a> |
+          <a href="https://switch-to.eu/privacy">Privacy Policy</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
