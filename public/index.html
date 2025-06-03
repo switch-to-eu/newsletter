@@ -81,96 +81,152 @@
           BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         line-height: 1.6;
         color: #383838;
-        background: linear-gradient(135deg, #fefbf9 0%, #f8fafc 100%);
-        padding: 20px;
-        min-height: 100vh;
+        background-color: #fefbf9;
+        padding: 16px;
       }
 
+      /* Container styles */
       .container {
-        max-width: 800px;
+        max-width: 600px;
         margin: 0 auto;
         background-color: #ffffff;
-        border-radius: 16px;
-        padding: 48px;
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-          0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
       }
 
+      /* Header styles */
       .header {
+        background-color: #fefbf9;
+        padding: 24px;
+        border-bottom: 1px solid #e5e7eb;
         text-align: center;
-        margin-bottom: 48px;
-        padding-bottom: 24px;
-        border-bottom: 2px solid #f1f5f9;
+      }
+
+      .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 8px;
+      }
+
+      .europe-svg {
+        width: 40px;
+        height: auto;
+        flex-shrink: 0;
       }
 
       .logo {
         font-family: 'Bricolage Grotesque', serif;
         font-weight: 800;
-        font-size: 36px;
+        font-size: 28px;
         color: #1a3c5a;
         text-decoration: none;
-        margin-bottom: 12px;
+        margin: 0;
         display: inline-block;
-        background: linear-gradient(135deg, #1a3c5a 0%, #64a5f6 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
       }
 
       .tagline {
-        font-size: 18px;
-        color: #64748b;
-        margin-bottom: 16px;
-        font-weight: 500;
+        font-size: 14px;
+        color: #334155;
+        margin: 0;
       }
 
-      h1 {
+      /* Content styles */
+      .content {
+        padding: 32px 24px;
+      }
+
+      h1,
+      h2,
+      h3 {
         font-family: 'Bricolage Grotesque', serif;
         font-weight: 800;
         color: #1a3c5a;
-        font-size: 32px;
-        margin-bottom: 32px;
-        text-align: center;
+        margin-bottom: 16px;
       }
 
+      h1 {
+        font-size: 32px;
+        line-height: 1.2;
+        margin-bottom: 24px;
+      }
+
+      h2 {
+        font-size: 24px;
+        line-height: 1.3;
+        margin-top: 32px;
+      }
+
+      h3 {
+        font-size: 20px;
+        line-height: 1.4;
+        margin-top: 24px;
+      }
+
+      p {
+        margin-bottom: 16px;
+        color: #383838;
+        font-size: 16px;
+      }
+
+      /* Link styles */
+      a {
+        color: #1a3c5a;
+        text-decoration: underline;
+        font-weight: 600;
+      }
+
+      a:hover {
+        color: #64a5f6;
+      }
+
+      /* Button styles */
+      .btn {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #1a3c5a;
+        color: #ffffff !important;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 16px;
+        margin: 16px 0;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #64a5f6;
+      }
+
+      .btn-secondary {
+        background-color: #feb5a7;
+        color: #1a3c5a !important;
+      }
+
+      .btn-secondary:hover {
+        background-color: #ff8a74;
+      }
+
+      /* Newsletter card styles - matching newsletter service cards */
       .newsletter-list {
         list-style: none;
-        margin-bottom: 48px;
+        margin-bottom: 32px;
       }
 
       .newsletter-item {
-        background: linear-gradient(135deg, #e9f4fd 0%, #f0f9ff 100%);
-        border-radius: 16px;
-        padding: 24px;
-        margin-bottom: 20px;
-        border: 1px solid #e0f2fe;
+        background-color: #e9f4fd;
+        border-radius: 12px;
+        padding: 20px;
+        margin: 16px 0;
         border-left: 4px solid #1a3c5a;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .newsletter-item::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(26, 60, 90, 0.1),
-          transparent
-        );
+        transition: all 0.2s ease;
       }
 
       .newsletter-item:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 20px 25px -5px rgba(26, 60, 90, 0.1),
-          0 10px 10px -5px rgba(26, 60, 90, 0.04);
-        border-left-color: #64a5f6;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
 
       .newsletter-link {
@@ -182,292 +238,298 @@
       .newsletter-title {
         font-family: 'Bricolage Grotesque', serif;
         font-weight: 800;
-        font-size: 22px;
+        font-size: 18px;
         color: #1a3c5a;
-        margin-bottom: 12px;
-        line-height: 1.3;
-      }
-
-      .newsletter-item:hover .newsletter-title {
-        color: #64a5f6;
+        margin-bottom: 8px;
+        margin-top: 0;
       }
 
       .newsletter-date {
         font-size: 14px;
-        color: #64748b;
-        margin-bottom: 12px;
+        color: #334155;
+        margin-bottom: 8px;
         font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
       }
 
       .newsletter-description {
-        font-size: 16px;
-        color: #475569;
-        line-height: 1.6;
+        font-size: 14px;
+        color: #383838;
+        margin-bottom: 0;
       }
 
-      .btn {
-        display: inline-block;
-        padding: 16px 32px;
-        background: linear-gradient(135deg, #1a3c5a 0%, #2563eb 100%);
-        color: #ffffff;
-        text-decoration: none;
-        border-radius: 12px;
-        font-weight: 600;
-        font-size: 16px;
-        margin-top: 20px;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 6px -1px rgba(26, 60, 90, 0.1),
-          0 2px 4px -1px rgba(26, 60, 90, 0.06);
-      }
-
-      .btn:hover {
-        background: linear-gradient(135deg, #64a5f6 0%, #3b82f6 100%);
-        transform: translateY(-2px);
-        box-shadow: 0 10px 15px -3px rgba(26, 60, 90, 0.1),
-          0 4px 6px -2px rgba(26, 60, 90, 0.05);
-      }
-
-      /* Newsletter subscription form styles */
+      /* Subscription section styles */
       .subscribe-section {
-        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-        border-radius: 20px;
-        padding: 40px;
-        margin: 40px 0;
+        background-color: #f0ebff;
+        padding: 24px;
+        border-radius: 12px;
+        border-left: 4px solid #8b5cf6;
+        margin: 32px 0;
         text-align: center;
-        border: 2px solid #e2e8f0;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .subscribe-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, #1a3c5a, #64a5f6, #1a3c5a);
       }
 
       .subscribe-section h2 {
         font-family: 'Bricolage Grotesque', serif;
         font-weight: 800;
-        color: #1a3c5a;
-        font-size: 28px;
-        margin-bottom: 16px;
-        background: linear-gradient(135deg, #1a3c5a 0%, #64a5f6 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: #8b5cf6;
+        font-size: 24px;
+        margin-bottom: 12px;
+        margin-top: 0;
       }
 
       .subscribe-description {
-        font-size: 18px;
-        color: #64748b;
-        margin-bottom: 32px;
-        line-height: 1.6;
-        max-width: 500px;
-        margin-left: auto;
-        margin-right: auto;
+        font-size: 16px;
+        color: #475569;
+        margin-bottom: 20px;
+        line-height: 1.5;
       }
 
       .subscribe-form {
-        max-width: 450px;
+        max-width: 400px;
         margin: 0 auto;
       }
 
       .form-group {
         display: flex;
         gap: 0;
-        box-shadow: 0 10px 15px -3px rgba(26, 60, 90, 0.1),
-          0 4px 6px -2px rgba(26, 60, 90, 0.05);
-        border-radius: 12px;
+        border-radius: 8px;
         overflow: hidden;
-        border: 2px solid #e2e8f0;
-        transition: all 0.3s ease;
-      }
-
-      .form-group:focus-within {
-        border-color: #1a3c5a;
-        box-shadow: 0 10px 15px -3px rgba(26, 60, 90, 0.1),
-          0 4px 6px -2px rgba(26, 60, 90, 0.05),
-          0 0 0 4px rgba(26, 60, 90, 0.1);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       }
 
       .email-input {
         flex: 1;
-        padding: 16px 20px;
-        border: none;
+        padding: 12px 16px;
+        border: 1px solid #d1d5db;
+        border-right: none;
         font-size: 16px;
         font-family: inherit;
         outline: none;
         background-color: white;
-        color: #1a3c5a;
       }
 
-      .email-input::placeholder {
-        color: #94a3b8;
+      .email-input:focus {
+        border-color: #8b5cf6;
       }
 
       .subscribe-btn {
-        padding: 16px 24px;
-        background: linear-gradient(135deg, #1a3c5a 0%, #2563eb 100%);
+        padding: 12px 20px;
+        background-color: #8b5cf6;
         color: white;
-        border: none;
+        border: 1px solid #8b5cf6;
         font-size: 16px;
         font-weight: 600;
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: background-color 0.3s ease;
         font-family: inherit;
-        min-width: 120px;
       }
 
       .subscribe-btn:hover {
-        background: linear-gradient(135deg, #64a5f6 0%, #3b82f6 100%);
-        transform: translateX(-2px);
+        background-color: #7c3aed;
       }
 
+      /* Footer styles */
+      .footer {
+        background-color: #f8f9fa;
+        padding: 24px;
+        border-top: 1px solid #e5e7eb;
+        text-align: center;
+      }
+
+      .footer p {
+        font-size: 14px;
+        color: #334155;
+        margin-bottom: 8px;
+      }
+
+      .footer a {
+        color: #334155;
+        font-weight: 400;
+      }
+
+      .social-links {
+        margin: 16px 0;
+      }
+
+      .social-links a {
+        color: #1a3c5a;
+        text-decoration: none;
+        margin: 0 12px;
+        font-weight: 600;
+      }
+
+      /* Responsive styles */
       @media (max-width: 640px) {
-        .container {
-          padding: 24px;
-          margin: 10px;
-          border-radius: 12px;
+        body {
+          padding: 8px;
         }
 
-        .logo {
-          font-size: 28px;
+        .container {
+          margin: 0;
+        }
+
+        .content {
+          padding: 24px 16px;
         }
 
         h1 {
-          font-size: 26px;
+          font-size: 28px;
         }
 
-        .newsletter-item {
-          padding: 20px;
+        h2 {
+          font-size: 22px;
         }
 
-        .newsletter-title {
-          font-size: 20px;
+        .header-content {
+          flex-direction: column;
+          gap: 12px;
         }
 
-        .subscribe-section {
-          padding: 24px;
-          margin: 24px 0;
+        .europe-svg {
+          width: 35px;
         }
 
-        .subscribe-section h2 {
+        .logo {
           font-size: 24px;
-        }
-
-        .subscribe-description {
-          font-size: 16px;
         }
 
         .form-group {
           flex-direction: column;
-          border-radius: 12px;
         }
 
         .email-input {
-          border-bottom: 1px solid #e2e8f0;
-          border-radius: 0;
+          border-right: 1px solid #d1d5db;
+          border-bottom: none;
         }
 
         .subscribe-btn {
-          border-radius: 0;
+          border-top: none;
         }
-      }
-
-      .footer {
-        text-align: center;
-        margin-top: 40px;
-        padding-top: 20px;
-        border-top: 1px solid #e5e7eb;
-        font-size: 14px;
-        color: #334155;
       }
     </style>
   </head>
   <body>
     <div class="container">
+      <!-- Header -->
       <div class="header">
-        <a href="https://switch-to.eu" class="logo">switch-to.eu</a>
-        <p class="tagline">Newsletter Archive</p>
-      </div>
-
-      <h1>🇪🇺 Monthly EU Tech Digest</h1>
-
-      <ul class="newsletter-list">
-        <li class="newsletter-item">
-          <a
-            href="https://newsletter.switch-to.eu/newsletters/001_launch.html"
-            class="newsletter-link"
-          >
-            <div class="newsletter-title">
-              Issue #001 - Your Monthly EU Tech Digest
-            </div>
-            <div class="newsletter-date">June 2025</div>
-            <div class="newsletter-description">
-              Featuring 6 new EU services: Vivaldi Browser, Proton
-              Drive, Mastodon, kDrive, Infomaniak Mail, and Filen.
-              Plus our launch event recap and media coverage.
-            </div>
-          </a>
-        </li>
-      </ul>
-
-      <!-- Newsletter subscription form -->
-      <div class="subscribe-section">
-        <h2>📧 Subscribe to our Newsletter</h2>
-        <p class="subscribe-description">
-          Stay informed about how you can make the switch and inspire
-          others to embrace European digital sovereignty.
-        </p>
-        <form
-          action="https://bandoco.mailcoach.app/subscribe/95f2e6cc-fc67-42ee-b845-f1c47af7c55f"
-          method="post"
-          accept-charset="utf-8"
-          class="subscribe-form"
-        >
-          <input
-            type="hidden"
-            name="_token"
-            value="zHOZnjPQoUsQFECtrK5IxpitXflpXKD90ToDMQ7G"
-            autocomplete="off"
+        <div class="header-content">
+          <img
+            src="https://www.switch-to.eu/images/europe.svg"
+            alt="Europe"
+            class="europe-svg"
           />
-          <div class="form-group">
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter your email address..."
-              aria-label="Email address"
-              required
-              class="email-input"
-            />
-            <input
-              type="submit"
-              name="submit"
-              id="submit"
-              value="Subscribe"
-              class="subscribe-btn"
-            />
-          </div>
-        </form>
+          <a href="https://switch-to.eu" class="logo">switch-to.eu</a>
+        </div>
+        <p class="tagline">
+          Newsletter Archive - Reclaim your digital independence
+        </p>
       </div>
 
-      <p style="margin-top: 30px; text-align: center">
-        <a href="https://switch-to.eu" class="btn"
-          >Visit switch-to.eu</a
-        >
-      </p>
+      <!-- Main Content -->
+      <div class="content">
+        <h1>🇪🇺 Monthly EU Tech Digest</h1>
 
-      <div class="footer">
         <p>
-          © 2025 switch-to.eu - Empowering digital sovereignty across
-          Europe 🇪🇺
+          Welcome to our newsletter archive! Each month, we share the
+          latest <strong>European digital alternatives</strong> to
+          help you <strong>reclaim your digital sovereignty</strong>.
+          Browse our past issues below.
+        </p>
+
+        <ul class="newsletter-list">
+          <li class="newsletter-item">
+            <a
+              href="https://newsletter.switch-to.eu/newsletters/001_launch.html"
+              class="newsletter-link"
+            >
+              <h3 class="newsletter-title">
+                Issue #001 - Your Monthly EU Tech Digest
+              </h3>
+              <div class="newsletter-date">June 2025</div>
+              <p class="newsletter-description">
+                Featuring 6 new EU services: Vivaldi Browser, Proton
+                Drive, Mastodon, kDrive, Infomaniak Mail, and Filen.
+                Plus our launch event recap and media coverage.
+              </p>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Newsletter subscription form -->
+        <div class="subscribe-section">
+          <h2>📧 Subscribe to our Newsletter</h2>
+          <p class="subscribe-description">
+            Stay informed about how you can make the switch and
+            inspire others to embrace European digital sovereignty.
+          </p>
+          <form
+            action="https://bandoco.mailcoach.app/subscribe/95f2e6cc-fc67-42ee-b845-f1c47af7c55f"
+            method="post"
+            accept-charset="utf-8"
+            class="subscribe-form"
+          >
+            <input
+              type="hidden"
+              name="_token"
+              value="zHOZnjPQoUsQFECtrK5IxpitXflpXKD90ToDMQ7G"
+              autocomplete="off"
+            />
+            <div class="form-group">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email address..."
+                aria-label="Email address"
+                required
+                class="email-input"
+              />
+              <input
+                type="submit"
+                name="submit"
+                id="submit"
+                value="Subscribe"
+                class="subscribe-btn"
+              />
+            </div>
+          </form>
+        </div>
+
+        <p style="margin-top: 30px; text-align: center">
+          <a href="https://switch-to.eu" class="btn"
+            >Visit switch-to.eu</a
+          >
+        </p>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <div class="social-links">
+          <a href="https://github.com/switch-to-eu/switch-to.eu"
+            >GitHub</a
+          >
+          <a href="https://switch-to.eu/about">About</a>
+          <a href="https://switch-to.eu/contribute">Contribute</a>
+        </div>
+
+        <p>
+          © 2025 switch-to.eu - A project by
+          <a
+            href="https://www.vinnie.studio"
+            style="color: #3b82f6; font-weight: 600"
+            >Studio Vinnie</a
+          >
+          and
+          <a
+            href="https://www.mvpeters.com/"
+            style="color: #3b82f6; font-weight: 600"
+            >MVPeters</a
+          >
+        </p>
+
+        <p>Empowering digital sovereignty across Europe 🇪🇺</p>
+
+        <p style="font-size: 12px; margin-top: 16px">
+          <a href="https://switch-to.eu/privacy">Privacy Policy</a>
         </p>
       </div>
     </div>
