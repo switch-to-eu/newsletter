@@ -1,4 +1,5 @@
 import { Font } from '../src/components/font';
+
 import {
     Body,
     Container,
@@ -15,6 +16,7 @@ import {
     Column,
     Row,
     Tailwind,
+    TailwindConfig,
 } from '@react-email/components';
 
 interface LaunchNewsletterProps {
@@ -22,7 +24,16 @@ interface LaunchNewsletterProps {
     unsubscribeUrl?: string;
 }
 
-const tailwindConfig = {
+const tailwindConfig: TailwindConfig = {
+    prefix: '',
+    important: false,
+    separator: ':',
+    safelist: [],
+    blocklist: [],
+    presets: [],
+    future: {},
+    experimental: {},
+    darkMode: false,
     theme: {
         extend: {
             colors: {
@@ -43,6 +54,8 @@ const tailwindConfig = {
             },
         },
     },
+    corePlugins: {},
+    plugins: [],
 };
 
 export const LaunchNewsletter = ({

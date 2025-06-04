@@ -14,7 +14,7 @@ RUN npm ci
 COPY . .
 
 # Build the React app
-RUN npm run website:build
+RUN npm run app:build
 
 # Stage 2: Serve with nginx
 FROM nginx:alpine
