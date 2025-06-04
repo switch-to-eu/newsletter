@@ -1,4 +1,4 @@
-import { Font } from '@/components/font';
+import { Font } from '../src/components/font';
 import {
     Body,
     Container,
@@ -16,7 +16,6 @@ import {
     Row,
     Tailwind,
 } from '@react-email/components';
-import * as React from 'react';
 
 interface LaunchNewsletterProps {
     previewText?: string;
@@ -58,7 +57,7 @@ export const LaunchNewsletter = ({
                     fontFamily="Hanken Grotesk"
                     fallbackFontFamily="Verdana"
                     webFont={{
-                        url: "https://newsletter.switch-to.eu/assets/fonts/HankenGrotesk-Regular.woff2",
+                        url: "https://newsletter.switch-to.eu/assets/fonts/HankenGrotesk-SemiBold.woff2",
                         format: "woff2",
                     }}
                     fontWeight={400}

@@ -1,22 +1,20 @@
 {
   "name": "newsletter",
   "version": "1.0.0",
-  "description": "Switch-to.EU newsletter built with React Email",
+  "description": "Switch-to.EU Newsletter built with React Email",
   "main": "index.js",
   "scripts": {
-    "dev": "email dev --port 3000",
+    "dev": "email dev --port 3002",
     "build": "email export",
-    "preview": "email dev --port 3000"
+    "app:dev": "vite",
+    "app:build": "vite build",
+    "app:preview": "vite preview"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/switch-to-eu/newsletter.git"
   },
-  "keywords": [
-    "react-email",
-    "newsletter",
-    "switch-to-eu"
-  ],
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -24,17 +22,18 @@
   },
   "homepage": "https://github.com/switch-to-eu/newsletter#readme",
   "dependencies": {
-    "@react-email/components": "^0.0.41",
-    "@react-email/font": "0.0.9",
-    "@react-email/render": "^1.1.2",
-    "@react-email/tailwind": "1.0.5",
-    "@types/node": "^20.0.0",
-    "@types/react": "^18.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "typescript": "^5.0.0"
+    "@react-email/components": "^0.0.25",
+    "@react-email/render": "^1.0.1",
+    "@react-email/tailwind": "^1.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "react-email": "^4.0.16"
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "react-email": "4.0.16",
+    "typescript": "^5.6.3",
+    "vite": "^6.0.1"
   }
 }
