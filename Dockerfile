@@ -19,8 +19,8 @@ RUN npm run app:build
 # Stage 2: Serve with nginx
 FROM nginx:alpine
 
-# Copy the built React app
-COPY --from=builder /app/dist /usr/share/nginx/html/
+# Copy the built React app from React Router build output
+COPY --from=builder /app/build/client /usr/share/nginx/html/
 
 # Copy static files (newsletters, assets)
 COPY public/ /usr/share/nginx/html/
