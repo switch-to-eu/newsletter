@@ -1,4 +1,5 @@
-import { Font } from '../src/components/font';
+import { Header, Footer, ServiceCard, SectionDivider, Font } from './components';
+import { emailTailwindConfig } from './utils';
 
 import {
   Body,
@@ -11,44 +12,16 @@ import {
   Preview,
   Section,
   Text,
-  Hr,
   Button,
   Column,
   Row,
   Tailwind,
-  TailwindConfig,
 } from '@react-email/components';
 
 interface LaunchNewsletterProps {
   previewText?: string;
   unsubscribeUrl?: string;
 }
-
-const tailwindConfig: TailwindConfig = {
-  darkMode: false,
-  theme: {
-    extend: {
-      colors: {
-        brand: {
-          primary: '#1a3c5a',
-          secondary: '#feb5a7',
-          bg: '#fefbf9',
-          text: '#383838',
-          muted: '#334155',
-          border: '#e5e7eb',
-          success: '#22c55e',
-          blue: '#3b82f6',
-        },
-      },
-      fontFamily: {
-        body: ['Hanken Grotesk', 'sans-serif'],
-        heading: ['Bricolage Grotesque', 'serif'],
-      },
-    },
-  },
-  corePlugins: {},
-  plugins: [],
-} as TailwindConfig;
 
 export const LaunchNewsletter = ({
   previewText = "Your Monthly EU Tech Digest - Issue #001",
@@ -82,36 +55,16 @@ export const LaunchNewsletter = ({
 
       <Preview>{previewText}</Preview>
 
-      <Tailwind config={tailwindConfig}>
+      <Tailwind config={emailTailwindConfig}>
         <Body style={{ fontFamily: 'Hanken Grotesk, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }} className="bg-brand-bg leading-normal m-0 p-0">
           <Container className="max-w-[600px] mx-auto px-0 bg-white rounded-xl overflow-hidden shadow-sm">
             {/* Header */}
-            <Section className="bg-brand-bg p-6 border-b border-brand-border text-center">
-              <Row className="mb-2">
-                <Column className="w-auto text-center">
-                  <Img
-                    src="https://newsletter.switch-to.eu/assets/images/logo.png"
-                    alt="Europe"
-                    className="inline-block mr-4 align-middle"
-                    width="40"
-                    height="40"
-                  />
-
-                  <Link href="https://switch-to.eu" className="font-heading font-extrabold text-3xl text-brand-primary no-underline align-middle">
-                    switch-to.eu
-                  </Link>
-                </Column>
-              </Row>
-
-              <Text className="text-sm text-brand-muted m-0">
-                Reclaim your digital independence. It's time to switch.
-              </Text>
-            </Section>
+            <Header />
 
             {/* Main Content */}
             <Section className="p-4">
               <Heading className="font-heading font-extrabold text-brand-primary mb-6 text-4xl leading-tight">
-                🇪🇺 Let’s keep the momentum going—explore, share, and switch.
+                🇪🇺 Let's keep the momentum going—explore, share, and switch.
               </Heading>
 
               <Text className="mb-4 text-brand-text text-base">
@@ -139,7 +92,7 @@ export const LaunchNewsletter = ({
                 Let's explore how we can collectively <strong>regain control of our digital lives</strong>.
               </Text>
 
-              <Hr className="border-0 h-px bg-brand-border my-10" />
+              <SectionDivider />
 
               <Heading className="font-heading font-extrabold text-brand-primary mb-4 text-2xl leading-tight mt-8">
                 ⚡ The Easiest Switch You Can Make Right Now
@@ -205,7 +158,7 @@ export const LaunchNewsletter = ({
                 </Text>
               </div>
 
-              <Hr className="border-0 h-px bg-brand-border my-10" />
+              <SectionDivider />
 
               {/* Launch Event Highlights */}
               <Heading className="font-heading font-extrabold text-brand-primary mb-4 text-2xl leading-tight mt-8">
@@ -280,9 +233,7 @@ export const LaunchNewsletter = ({
                 </ul>
               </div>
 
-
-
-              <Hr className="border-0 h-px bg-brand-border my-10" />
+              <SectionDivider />
 
               {/* How You Can Help */}
               <Heading className="font-heading font-extrabold text-brand-primary mb-4 text-2xl leading-tight mt-8">
@@ -335,7 +286,7 @@ export const LaunchNewsletter = ({
                 Get Involved
               </Button>
 
-              <Hr className="border-0 h-px bg-brand-border my-10" />
+              <SectionDivider />
 
               {/* Press Coverage */}
               <Heading className="font-heading font-extrabold text-brand-primary mb-4 text-2xl leading-tight mt-8">
@@ -384,7 +335,7 @@ export const LaunchNewsletter = ({
                 </ul>
               </div>
 
-              <Hr className="border-0 h-px bg-brand-border my-10" />
+              <SectionDivider />
 
               {/* New EU Services */}
               <Heading className="font-heading font-extrabold text-brand-primary mb-4 text-2xl leading-tight mt-8">
@@ -397,123 +348,67 @@ export const LaunchNewsletter = ({
                 <Link href="https://switch-to.eu/en/feedback" className="text-brand-primary underline font-semibold"><strong>Tell us</strong></Link>.
               </Text>
 
-              {/* Service Cards */}
-              <div className="bg-blue-50 rounded-xl p-5 my-4 border-l-4 border-brand-primary">
-                <Heading className="font-heading font-extrabold text-brand-primary mb-2 text-lg mt-0">
-                  Vivaldi Browser
-                  <Link href="https://switch-to.eu/en/services/eu/vivaldi" className="text-sm font-normal ml-2 text-brand-primary underline">→ view service</Link>
-                </Heading>
-                <Text className="text-sm mb-2 text-brand-text"><strong>Replaces:</strong> Chrome, Firefox, Safari</Text>
-                <Text className="text-sm mb-2 text-brand-text">
-                  🇳🇴 privacy-focused browser with extensive customization and built-in ad/tracker blocking.
-                </Text>
-                <div>
-                  <span className="inline-block py-1 px-3 bg-green-200 text-brand-primary text-xs font-semibold rounded-full mr-1 my-1">🇳🇴</span>
-                  <span className="inline-block py-1 px-3 bg-green-200 text-brand-primary text-xs font-semibold rounded-full mr-1 my-1">Privacy-first</span>
-                </div>
-              </div>
+              {/* Service Cards using the new component */}
+              <ServiceCard
+                serviceName="Vivaldi Browser"
+                serviceUrl="https://switch-to.eu/en/services/eu/vivaldi"
+                replaces="Chrome, Firefox, Safari"
+                description="🇳🇴 privacy-focused browser with extensive customization and built-in ad/tracker blocking."
+                tags={["🇳🇴", "Privacy-first"]}
+                backgroundColor="bg-blue-50"
+              />
 
-              <div className="bg-orange-50 rounded-xl p-5 my-4 border-l-4 border-brand-primary">
-                <Heading className="font-heading font-extrabold text-brand-primary mb-2 text-lg mt-0">
-                  Proton Drive
-                  <Link href="https://switch-to.eu/en/services/eu/proton-drive" className="text-sm font-normal ml-2 text-brand-primary underline">→ view service</Link>
-                </Heading>
-                <Text className="text-sm mb-2 text-brand-text"><strong>Replaces:</strong> Google Drive, iCloud, OneDrive</Text>
-                <Text className="text-sm mb-2 text-brand-text">
-                  Swiss encrypted cloud storage with end-to-end encryption and seamless Proton ecosystem integration.
-                </Text>
-                <div>
-                  <span className="inline-block py-1 px-3 bg-green-200 text-brand-primary text-xs font-semibold rounded-full mr-1 my-1">Swiss</span>
-                  <span className="inline-block py-1 px-3 bg-green-200 text-brand-primary text-xs font-semibold rounded-full mr-1 my-1">End-to-end encrypted</span>
-                </div>
-              </div>
+              <ServiceCard
+                serviceName="Proton Drive"
+                serviceUrl="https://switch-to.eu/en/services/eu/proton-drive"
+                replaces="Google Drive, iCloud, OneDrive"
+                description="Swiss encrypted cloud storage with end-to-end encryption and seamless Proton ecosystem integration."
+                tags={["Swiss", "End-to-end encrypted"]}
+                backgroundColor="bg-orange-50"
+              />
 
-              <div className="bg-green-50 rounded-xl p-5 my-4 border-l-4 border-brand-primary">
-                <Heading className="font-heading font-extrabold text-brand-primary mb-2 text-lg mt-0">
-                  Mastodon
-                  <Link href="https://switch-to.eu/en/services/eu/mastodon" className="text-sm font-normal ml-2 text-brand-primary underline">→ view service</Link>
-                </Heading>
-                <Text className="text-sm mb-2 text-brand-text"><strong>Replaces:</strong> Twitter/X, Facebook, Instagram</Text>
-                <Text className="text-sm mb-2 text-brand-text">
-                  German-originated decentralized social media with no ads, no algorithms, and community-owned servers.
-                </Text>
-                <div>
-                  <span className="inline-block py-1 px-3 bg-green-200 text-brand-primary text-xs font-semibold rounded-full mr-1 my-1">German</span>
-                  <span className="inline-block py-1 px-3 bg-green-200 text-brand-primary text-xs font-semibold rounded-full mr-1 my-1">Decentralized</span>
-                </div>
-              </div>
+              <ServiceCard
+                serviceName="Mastodon"
+                serviceUrl="https://switch-to.eu/en/services/eu/mastodon"
+                replaces="Twitter/X, Facebook, Instagram"
+                description="German-originated decentralized social media with no ads, no algorithms, and community-owned servers."
+                tags={["German", "Decentralized"]}
+                backgroundColor="bg-green-50"
+              />
 
-              <div className="bg-blue-50 rounded-xl p-5 my-4 border-l-4 border-brand-primary">
-                <Heading className="font-heading font-extrabold text-brand-primary mb-2 text-lg mt-0">
-                  kDrive
-                  <Link href="https://switch-to.eu/en/services/eu/kdrive" className="text-sm font-normal ml-2 text-brand-primary underline">→ view service</Link>
-                </Heading>
-                <Text className="text-sm mb-2 text-brand-text"><strong>Replaces:</strong> Dropbox, Box, Google Drive</Text>
-                <Text className="text-sm mb-2 text-brand-text">
-                  Swiss sovereign cloud storage with GDPR compliance and enterprise-grade security.
-                </Text>
-                <div>
-                  <span className="inline-block py-1 px-3 bg-green-200 text-brand-primary text-xs font-semibold rounded-full mr-1 my-1">Swiss</span>
-                  <span className="inline-block py-1 px-3 bg-green-200 text-brand-primary text-xs font-semibold rounded-full mr-1 my-1">Sovereign cloud</span>
-                </div>
-              </div>
+              <ServiceCard
+                serviceName="kDrive"
+                serviceUrl="https://switch-to.eu/en/services/eu/kdrive"
+                replaces="Dropbox, Box, Google Drive"
+                description="Swiss sovereign cloud storage with GDPR compliance and enterprise-grade security."
+                tags={["Swiss", "Sovereign cloud"]}
+                backgroundColor="bg-blue-50"
+              />
 
-              <div className="bg-orange-50 rounded-xl p-5 my-4 border-l-4 border-brand-primary">
-                <Heading className="font-heading font-extrabold text-brand-primary mb-2 text-lg mt-0">
-                  Infomaniak Mail
-                  <Link href="https://switch-to.eu/en/services/eu/infomaniak-mail" className="text-sm font-normal ml-2 text-brand-primary underline">→ view service</Link>
-                </Heading>
-                <Text className="text-sm mb-2 text-brand-text"><strong>Replaces:</strong> Gmail, Outlook, Yahoo Mail</Text>
-                <Text className="text-sm mb-2 text-brand-text">
-                  Swiss professional email service with 100% renewable energy hosting and collaboration tools.
-                </Text>
-                <div>
-                  <span className="inline-block py-1 px-3 bg-green-200 text-brand-primary text-xs font-semibold rounded-full mr-1 my-1">Swiss</span>
-                  <span className="inline-block py-1 px-3 bg-green-200 text-brand-primary text-xs font-semibold rounded-full mr-1 my-1">Eco-friendly</span>
-                </div>
-              </div>
+              <ServiceCard
+                serviceName="Infomaniak Mail"
+                serviceUrl="https://switch-to.eu/en/services/eu/infomaniak-mail"
+                replaces="Gmail, Outlook, Yahoo Mail"
+                description="Swiss professional email service with 100% renewable energy hosting and collaboration tools."
+                tags={["Swiss", "Eco-friendly"]}
+                backgroundColor="bg-orange-50"
+              />
 
-              <div className="bg-green-50 rounded-xl p-5 my-4 border-l-4 border-brand-primary">
-                <Heading className="font-heading font-extrabold text-brand-primary mb-2 text-lg mt-0">
-                  Filen
-                  <Link href="https://switch-to.eu/en/services/eu/filen" className="text-sm font-normal ml-2 text-brand-primary underline">→ view service</Link>
-                </Heading>
-                <Text className="text-sm mb-2 text-brand-text"><strong>Replaces:</strong> Google Drive, Dropbox, OneDrive</Text>
-                <Text className="text-sm mb-2 text-brand-text">
-                  German zero-knowledge cloud storage with client-side encryption and generous free tier.
-                </Text>
-                <div>
-                  <span className="inline-block py-1 px-3 bg-green-200 text-brand-primary text-xs font-semibold rounded-full mr-1 my-1">German</span>
-                  <span className="inline-block py-1 px-3 bg-green-200 text-brand-primary text-xs font-semibold rounded-full mr-1 my-1">Zero-knowledge</span>
-                </div>
-              </div>
+              <ServiceCard
+                serviceName="Filen"
+                serviceUrl="https://switch-to.eu/en/services/eu/filen"
+                replaces="Google Drive, Dropbox, OneDrive"
+                description="German zero-knowledge cloud storage with client-side encryption and generous free tier."
+                tags={["German", "Zero-knowledge"]}
+                backgroundColor="bg-green-50"
+              />
             </Section>
 
             {/* Footer */}
-            <Section className="bg-gray-50 p-6 border-t border-brand-border text-center">
-              <div className="my-4">
-                <Link href="https://github.com/switch-to-eu/switch-to.eu" className="text-brand-primary no-underline mx-3 font-semibold">GitHub</Link>
-                <Link href="https://switch-to.eu/about" className="text-brand-primary no-underline mx-3 font-semibold">About</Link>
-                <Link href="https://switch-to.eu/contribute" className="text-brand-primary no-underline mx-3 font-semibold">Contribute</Link>
-              </div>
-
-              <Text className="text-sm text-brand-muted mb-2">
-                © 2024 switch-to.eu - A project by{' '}
-                <Link href="https://www.vinnie.studio" className="text-brand-blue font-semibold underline">Studio Vinnie</Link>
-                {' '}and{' '}
-                <Link href="https://www.mvpeters.com/" className="text-brand-blue font-semibold underline">MVPeters</Link>
-              </Text>
-
-              <Text className="text-sm text-brand-muted mb-2">Empowering digital sovereignty across Europe</Text>
-
-              <Text className="text-xs mt-4 text-brand-muted mb-2">
-                <Link href={unsubscribeUrl} className="text-brand-muted font-normal underline">Unsubscribe</Link>
-                {' | '}
-                <Link href="https://newsletter.switch-to.eu/newsletters/001_launch.html" className="text-brand-muted font-normal underline">View in browser</Link>
-                {' | '}
-                <Link href="https://switch-to.eu/privacy" className="text-brand-muted font-normal underline">Privacy Policy</Link>
-              </Text>
-            </Section>
+            <Footer
+              unsubscribeUrl={unsubscribeUrl}
+              viewInBrowserUrl="https://newsletter.switch-to.eu/newsletter/001"
+            />
           </Container>
         </Body>
       </Tailwind>

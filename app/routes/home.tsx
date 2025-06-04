@@ -1,61 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { render } from '@react-email/render';
-import { LaunchNewsletter } from '../../emails/launch-newsletter';
+import React from 'react';
+import { Link } from 'react-router';
+import { newsletters } from '../data/newsletters';
+import type { MetaFunction } from "react-router";
 
-interface Newsletter {
-    id: string;
-    title: string;
-    date: string;
-    description: string;
-    component: React.ComponentType<any>;
-}
+export const meta: MetaFunction = () => {
+    return [
+        { title: "Newsletter Archive - Switch-to.EU" },
+        { name: "description", content: "Monthly EU Tech Digest - Reclaim your digital independence. Browse our archive of European digital alternatives." },
+    ];
+};
 
-const newsletters: Newsletter[] = [
-    {
-        id: '001',
-        title: 'Issue #001 - Your Monthly EU Tech Digest',
-        date: 'June 2025',
-        description: 'Featuring 6 new EU services: Vivaldi Browser, Proton Drive, Mastodon, kDrive, Infomaniak Mail, and Filen. Plus our launch event recap and media coverage.',
-        component: LaunchNewsletter,
-    },
-];
-
-const NewsletterArchive: React.FC = () => {
-    const [selectedNewsletter, setSelectedNewsletter] = useState<Newsletter | null>(null);
-    const [renderedHtml, setRenderedHtml] = useState<string>('');
-
-    const handleNewsletterSelect = async (newsletter: Newsletter) => {
-        setSelectedNewsletter(newsletter);
-        try {
-            const html = await render(React.createElement(newsletter.component));
-            setRenderedHtml(html);
-        } catch (error) {
-            console.error('Error rendering newsletter:', error);
-        }
-    };
-
-    const handleBackToList = () => {
-        setSelectedNewsletter(null);
-        setRenderedHtml('');
-    };
-
-    if (selectedNewsletter && renderedHtml) {
-        return (
-            <div className="newsletter-viewer">
-                <div className="viewer-header">
-                    <button onClick={handleBackToList} className="back-btn">
-                        ← Back to Archive
-                    </button>
-                    <h2>{selectedNewsletter.title}</h2>
-                </div>
-                <div
-                    className="newsletter-content"
-                    dangerouslySetInnerHTML={{ __html: renderedHtml }}
-                />
-            </div>
-        );
-    }
-
+export default function Home() {
     return (
         <div className="container">
             {/* Header */}
@@ -87,14 +42,14 @@ const NewsletterArchive: React.FC = () => {
                 <ul className="newsletter-list">
                     {newsletters.map((newsletter) => (
                         <li key={newsletter.id} className="newsletter-item">
-                            <button
-                                onClick={() => handleNewsletterSelect(newsletter)}
+                            <Link
+                                to={`/newsletter/${newsletter.id}`}
                                 className="newsletter-link"
                             >
                                 <h3 className="newsletter-title">{newsletter.title}</h3>
                                 <div className="newsletter-date">{newsletter.date}</div>
                                 <p className="newsletter-description">{newsletter.description}</p>
-                            </button>
+                            </Link>
                         </li>
                     ))}
                 </ul>
@@ -179,6 +134,4 @@ const NewsletterArchive: React.FC = () => {
             </div>
         </div>
     );
-};
-
-export default NewsletterArchive; 
+} 
