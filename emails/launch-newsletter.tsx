@@ -25,14 +25,6 @@ interface LaunchNewsletterProps {
 }
 
 const tailwindConfig: TailwindConfig = {
-    prefix: '',
-    important: false,
-    separator: ':',
-    safelist: [],
-    blocklist: [],
-    presets: [],
-    future: {},
-    experimental: {},
     darkMode: false,
     theme: {
         extend: {
@@ -56,7 +48,7 @@ const tailwindConfig: TailwindConfig = {
     },
     corePlugins: {},
     plugins: [],
-};
+} as TailwindConfig;
 
 export const LaunchNewsletter = ({
     previewText = "Your Monthly EU Tech Digest - Issue #001",
@@ -65,7 +57,6 @@ export const LaunchNewsletter = ({
     return (
         <Html>
             <Head>
-                {/* Define multiple fonts with separate Font components */}
                 <Font
                     fontFamily="Hanken Grotesk"
                     fallbackFontFamily="Verdana"
@@ -93,21 +84,24 @@ export const LaunchNewsletter = ({
 
             <Tailwind config={tailwindConfig}>
                 <Body style={{ fontFamily: 'Hanken Grotesk, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }} className="bg-brand-bg leading-normal m-0 p-0">
-                    <Container className="max-w-[600px] mx-auto bg-white rounded-xl overflow-hidden shadow-sm">
+                    <Container className="max-w-[600px] mx-auto px-0 bg-white rounded-xl overflow-hidden shadow-sm">
                         {/* Header */}
                         <Section className="bg-brand-bg p-6 border-b border-brand-border text-center">
-                            <div className="flex items-center justify-center gap-4 mb-2">
-                                <Img
-                                    src="https://newsletter.switch-to.eu/assets/images/logo.png"
-                                    alt="Europe"
-                                    className="flex-shrink-0"
-                                    width="40"
-                                    height="40"
-                                />
-                                <Link href="https://switch-to.eu" className="font-heading font-extrabold text-3xl text-brand-primary no-underline inline-block">
-                                    switch-to.eu
-                                </Link>
-                            </div>
+                            <Row className="mb-2">
+                                <Column className="w-auto text-center">
+                                    <Img
+                                        src="https://newsletter.switch-to.eu/assets/images/logo.png"
+                                        alt="Europe"
+                                        className="inline-block mr-4 align-middle"
+                                        width="40"
+                                        height="40"
+                                    />
+
+                                    <Link href="https://switch-to.eu" className="font-heading font-extrabold text-3xl text-brand-primary no-underline align-middle">
+                                        switch-to.eu
+                                    </Link>
+                                </Column>
+                            </Row>
 
                             <Text className="text-sm text-brand-muted m-0">
                                 Reclaim your digital independence. It's time to switch.
@@ -115,7 +109,7 @@ export const LaunchNewsletter = ({
                         </Section>
 
                         {/* Main Content */}
-                        <Section className="p-8">
+                        <Section className="p-4">
                             <Heading className="font-heading font-extrabold text-brand-primary mb-6 text-4xl leading-tight">
                                 🇪🇺 Your Monthly EU Tech Digest
                             </Heading>
@@ -189,7 +183,7 @@ export const LaunchNewsletter = ({
                                 <Text className="mb-4 text-brand-text text-base">Two browsers stand out for European users:</Text>
 
                                 <Row className="my-4">
-                                    <Column className="w-1/2">
+                                    <Column className="w-1/2  pr-1">
                                         <Button
                                             href="https://switch-to.eu/en/services/eu/vivaldi"
                                             className="py-3  bg-brand-primary text-white no-underline rounded-lg font-semibold text-base text-center w-full"
@@ -198,7 +192,7 @@ export const LaunchNewsletter = ({
                                         </Button>
                                     </Column>
 
-                                    <Column className="w-1/2">
+                                    <Column className="w-1/2 pl-1">
                                         <Button
                                             href="https://switch-to.eu/en/services/eu/brave"
                                             className="py-3 bg-brand-secondary text-brand-primary no-underline rounded-lg font-semibold text-base text-center w-full"
