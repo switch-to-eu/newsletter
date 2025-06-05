@@ -11,7 +11,6 @@ import {
   Button,
   Column,
   Row,
-  Tailwind,
 } from '@react-email/components';
 
 interface LaunchNewsletterProps {
@@ -38,14 +37,11 @@ export const LaunchNewsletter = ({
           </Heading>
 
           <Text className="mb-4 text-brand-text text-base">
-            Here's the thing about <strong>Big Tech</strong>: they've made switching seem impossible.
-            But it's not. In fact, <strong>it's easier than you think</strong>.
+            Here's the thing about <strong>Big Tech</strong>: they've made switching seem impossible. But it's not. In fact, <strong>it's easier than you think</strong>.
           </Text>
 
           <Text className="mb-4 text-brand-text text-base">
-            <strong><Link href="https://switch-to.eu" className="text-brand-primary underline font-semibold">Switch-to.EU</Link></strong> launched this month to prove exactly that.
-            The response from the European tech community has been extraordinary.
-            <strong>Almost 10,000 visitors in two weeks</strong>. People are ready for change.
+            <strong><Link href="https://switch-to.eu" className="text-brand-primary underline font-semibold">Switch-to.EU</Link></strong> launched this month to prove exactly that. The response from the European tech community has been extraordinary. <strong>Almost 10,000 visitors in two weeks</strong>. People are ready for change.
           </Text>
 
           <Text className="mb-4 text-brand-text text-base">This month, we're covering:</Text>
@@ -69,19 +65,15 @@ export const LaunchNewsletter = ({
           </Heading>
 
           <Text className="mb-4 text-brand-text text-base">
-            <strong>Your browser</strong>. That's it. <strong>Five minutes</strong> of your time for
-            <strong>immediate privacy benefits</strong>.
+            <strong>Your browser</strong>. That's it. <strong>Five minutes</strong> of your time for <strong>immediate privacy benefits</strong>.
           </Text>
 
           <Text className="mb-4 text-brand-text text-base">
-            Every day you use <strong>Chrome</strong>, Google records your every click, search,
-            and website visit. They build detailed profiles to sell to advertisers.
-            <strong>Your browsing history becomes their business model</strong>.
+            Every day you use <strong>Chrome</strong>, Google records your every click, search, and website visit. They build detailed profiles to sell to advertisers. <strong>Your browsing history becomes their business model</strong>.
           </Text>
 
           <Text className="mb-4 text-brand-text text-base">
-            But here's what makes browsers the perfect first switch: <strong>no data migration required</strong>,
-            all your accounts still work, and you can <strong>try it risk-free</strong>.
+            But here's what makes browsers the perfect first switch: <strong>no data migration required</strong>, all your accounts still work, and you can <strong>try it risk-free</strong>.
           </Text>
 
           {/* Browser Switch CTA */}
@@ -97,8 +89,7 @@ export const LaunchNewsletter = ({
             />
 
             <Text className="text-sm mb-4 text-brand-text">
-              Screenshot: <strong>Vivaldi</strong> is a 🇳🇴 privacy-focused browser with extensive
-              customization and built-in ad/tracker blocking.
+              Screenshot: <strong>Vivaldi</strong> is a 🇳🇴 privacy-focused browser with extensive customization and built-in ad/tracker blocking.
             </Text>
 
             <Text className="mb-4 text-brand-text text-base">Two browsers stand out for European users:</Text>
@@ -136,9 +127,7 @@ export const LaunchNewsletter = ({
           </Heading>
 
           <Text className="mb-4 text-brand-text text-base">
-            Thank you to everyone who participated in <strong>"DO THE TECH SWITCH"</strong> - our official launch event.
-            The discussions on challenging <strong>Big Tech monopolies</strong> and supporting
-            <strong>local, ethical alternatives</strong> were very insightful.
+            Thank you to everyone who participated in <strong>"DO THE TECH SWITCH"</strong> - our official launch event. The discussions on challenging <strong>Big Tech monopolies</strong> and supporting <strong>local, ethical alternatives</strong> were very insightful.
           </Text>
 
           <div className="bg-orange-50 rounded-xl p-5 my-4 border-l-4 border-brand-primary">
@@ -211,15 +200,13 @@ export const LaunchNewsletter = ({
           </Heading>
 
           <Text className="mb-4 text-brand-text text-base">
-            We're building <strong>Europe's most helpful directory of digital alternatives</strong>.
-            Your expertise matters. <strong>Your contribution shapes the future</strong>.
+            We're building <strong>Europe's most helpful directory of digital alternatives</strong>. Your expertise matters. <strong>Your contribution shapes the future</strong>.
           </Text>
 
           <div className="bg-blue-50 rounded-xl p-5 my-4 border-l-4 border-brand-primary">
             <Heading className="font-heading font-extrabold text-brand-primary mb-2 text-lg mt-0">Translation Help</Heading>
             <Text className="text-sm mb-2 text-brand-text">
-              Help us serve users across <strong>all European languages</strong>. We're particularly looking for
-              <strong>native German and French speakers</strong> to translate service descriptions and migration guides.
+              Help us serve users across <strong>all European languages</strong>. We're particularly looking for <strong>native German and French speakers</strong> to translate service descriptions and migration guides.
             </Text>
           </div>
 
@@ -245,8 +232,7 @@ export const LaunchNewsletter = ({
           </div>
 
           <Text className="mt-6 mb-4 text-brand-text text-base">
-            <strong>Every contribution, no matter how small</strong>, helps Europeans reclaim their
-            <strong>digital sovereignty</strong>.
+            <strong>Every contribution, no matter how small</strong>, helps Europeans reclaim their <strong>digital sovereignty</strong>.
           </Text>
 
           <Button
@@ -264,8 +250,7 @@ export const LaunchNewsletter = ({
           </Heading>
 
           <Text className="mb-4 text-brand-text text-base">
-            Our launch caught the attention of <strong>Belgian media</strong>. Major outlets covered our mission to help
-            Europeans <strong>reclaim digital sovereignty</strong>.
+            Our launch caught the attention of <strong>Belgian media</strong>. Major outlets covered our mission to help Europeans <strong>reclaim digital sovereignty</strong>.
           </Text>
 
           <Img
@@ -277,8 +262,7 @@ export const LaunchNewsletter = ({
           <div className="bg-blue-50 rounded-xl p-5 my-4 border-l-4 border-brand-primary">
             <Heading className="font-heading font-extrabold text-brand-primary mb-2 text-lg mt-0">Belgian Media Coverage</Heading>
             <Text className="text-sm mb-4 text-brand-text">
-              <strong>"We pay with our privacy"</strong> - how journalists described the hidden cost of
-              <strong>Big Tech services</strong>.
+              <strong>"We pay with our privacy"</strong> - how journalists described the hidden cost of <strong>Big Tech services</strong>.
             </Text>
 
             <ul className="mb-4 text-sm pl-5">
@@ -313,9 +297,7 @@ export const LaunchNewsletter = ({
           </Heading>
 
           <Text className="mb-6 text-brand-text text-base">
-            <strong>Six new services</strong> added this month, thanks to <strong>community suggestions</strong>.
-            Have one we should know about?
-            <Link href="https://switch-to.eu/en/feedback" className="text-brand-primary underline font-semibold"><strong>Tell us</strong></Link>.
+            <strong>Six new services</strong> added this month, thanks to <strong>community suggestions</strong>. Have one we should know about? <Link href="https://switch-to.eu/en/feedback" className="text-brand-primary underline font-semibold"><strong>Tell us</strong></Link>.
           </Text>
 
           {/* Service Cards using the new component */}

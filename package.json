@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "description": "Switch-to.EU Newsletter built with React Email",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "email dev --port 3002",
     "build": "email export",
     "app:dev": "next dev --port 3001",
     "app:build": "next build",
     "app:start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "campaign": "tsx scripts/campaign-manager.ts",
+    "campaign:help": "tsx scripts/campaign-manager.ts"
   },
   "repository": {
     "type": "git",
@@ -26,6 +29,7 @@
     "@react-email/components": "^0.0.41",
     "@react-email/render": "^1.1.2",
     "@react-email/tailwind": "^1.0.5",
+    "dotenv": "^16.4.5",
     "next": "^15.3.3",
     "next-plausible": "^3.12.4",
     "react": "19.1.0",
@@ -38,6 +42,7 @@
     "@types/react-dom": "^19.1.0",
     "eslint": "^9.25.1",
     "react-email": "4.0.16",
+    "tsx": "^4.19.2",
     "typescript": "^5.6.3"
   }
 }

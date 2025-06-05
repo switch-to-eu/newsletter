@@ -17,7 +17,7 @@ export interface Newsletter {
 export const newsletters: Newsletter[] = [
   {
     id: "001",
-    title: "Issue #001 - Your Monthly EU Tech Digest",
+    title: "✊ They track, we fight back",
     date: "June 2025",
     description:
       "Featuring 6 new EU services: Vivaldi Browser, Proton Drive, Mastodon, kDrive, Infomaniak Mail, and Filen. Plus our launch event recap and media coverage.",

@@ -17,8 +17,20 @@ export const emailTailwindConfig: TailwindConfig = {
         },
       },
       fontFamily: {
-        body: ["Hanken Grotesk", "sans-serif"],
-        heading: ["Bricolage Grotesque", "serif"],
+        body: [
+          "Hanken Grotesk",
+          "-apple-system",
+          "Segoe UI",
+          "Roboto",
+          "sans-serif",
+        ],
+        heading: [
+          "Bricolage Grotesque",
+          "-apple-system",
+          "Segoe UI",
+          "Roboto",
+          "sans-serif",
+        ],
       },
     },
   },
