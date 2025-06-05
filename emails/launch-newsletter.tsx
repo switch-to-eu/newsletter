@@ -1,4 +1,4 @@
-import { Header, Footer, ServiceCard, SectionDivider, Font } from './components';
+import { Header, Footer, ServiceCard, SectionDivider, Font, EmailList } from './components';
 import { Html } from './components/html';
 
 import {
@@ -33,7 +33,7 @@ export const LaunchNewsletter = ({
         {/* Main Content */}
         <Section className="p-4">
           <Heading className="font-heading font-extrabold text-brand-primary mb-6 text-4xl leading-tight">
-            🇪🇺 Let's keep the momentum going—explore, share, and switch.
+            🇪🇺 Our successful launch is just the start—let's explore, share, and switch!
           </Heading>
 
           <Text className="mb-4 text-brand-text text-base">
@@ -46,13 +46,17 @@ export const LaunchNewsletter = ({
 
           <Text className="mb-4 text-brand-text text-base">This month, we're covering:</Text>
 
-          <ol className="mb-6 pl-5">
-            <li className="mb-2 text-brand-text"><strong>The Easiest Switch You Can Make Right Now</strong></li>
-            <li className="mb-2 text-brand-text"><strong>Launch Event Highlights</strong></li>
-            <li className="mb-2 text-brand-text"><strong>How You Can Help</strong></li>
-            <li className="mb-2 text-brand-text"><strong>Press Coverage</strong></li>
-            <li className="mb-2 text-brand-text"><strong>New EU Services</strong></li>
-          </ol>
+          <EmailList
+            type="ordered"
+            className="mb-6"
+            items={[
+              { content: <strong>The Easiest Switch You Can Make Right Now</strong> },
+              { content: <strong>Launch Event Highlights</strong> },
+              { content: <strong>How You Can Help</strong> },
+              { content: <strong>Press Coverage</strong> },
+              { content: <strong>New EU Services</strong> }
+            ]}
+          />
 
           <Text className="mb-4 text-brand-text text-base">
             Let's explore how we can collectively <strong>regain control of our digital lives</strong>.
@@ -142,20 +146,37 @@ export const LaunchNewsletter = ({
               <Link href="https://omvorm.studio" className="text-brand-primary underline font-semibold"> Mathias De Winter (Omvorm)</Link>
             </Text>
 
-            <ul className="mb-4 text-sm pl-5">
-              <li className="mb-2 text-brand-text">
-                <Link href="https://www.isditecht.be" className="text-brand-primary underline font-semibold"><strong>Jannes Van de Maele</strong></Link> -
-                The reality of Big Tech surveillance
-              </li>
-              <li className="mb-2 text-brand-text">
-                <Link href="https://vinnie.studio" className="text-brand-primary underline font-semibold"><strong>Vincent Peters</strong></Link> -
-                How Switch-to.EU makes switching simple
-              </li>
-              <li className="mb-2 text-brand-text">
-                <Link href="https://nestor.coop" className="text-brand-primary underline font-semibold"><strong>Stijn Vanhandsaeme</strong></Link> -
-                Business alternatives that actually work
-              </li>
-            </ul>
+            <EmailList
+              type="unordered"
+              className="mb-4"
+              itemClassName="text-sm"
+              items={[
+                {
+                  content: (
+                    <>
+                      <Link href="https://www.isditecht.be" className="text-brand-primary underline font-semibold"><strong>Jannes Van de Maele</strong></Link> -
+                      The reality of Big Tech surveillance
+                    </>
+                  )
+                },
+                {
+                  content: (
+                    <>
+                      <Link href="https://vinnie.studio" className="text-brand-primary underline font-semibold"><strong>Vincent Peters</strong></Link> -
+                      How Switch-to.EU makes switching simple
+                    </>
+                  )
+                },
+                {
+                  content: (
+                    <>
+                      <Link href="https://nestor.coop" className="text-brand-primary underline font-semibold"><strong>Stijn Vanhandsaeme</strong></Link> -
+                      Business alternatives that actually work
+                    </>
+                  )
+                }
+              ]}
+            />
 
             {/* Event Photos */}
             <Row className="mb-3">
@@ -182,14 +203,24 @@ export const LaunchNewsletter = ({
             <Heading className="font-heading font-extrabold text-brand-primary mb-3 text-lg mt-0">
               Launch Impact Numbers
             </Heading>
-            <Text>Numbers don't lie - Europeans want alternatives. 🚀</Text>
-            <ul className="mb-0 pl-5 text-base">
-              <li className="mb-2 text-brand-text"><strong>9,847 visitors</strong> in the first two weeks</li>
-              <li className="mb-2 text-brand-text"><strong>35,000+ page views</strong> and counting</li>
-              <li className="mb-2 text-brand-text"><strong>2m 34s</strong> average visit duration</li>
-              <li className="mb-2 text-brand-text"><strong>2,000+ organic search visits</strong></li>
-              <li className="mb-2 text-brand-text"><strong>35 <a href="https://github.com/switch-to-eu/switch-to.eu" className="text-brand-primary underline font-semibold">GitHub issues</a></strong> created by the community</li>
-            </ul>
+
+            <Text className="mb-4 text-brand-text text-base">Numbers don't lie - Europeans want alternatives. 🚀</Text>
+            <EmailList
+              type="unordered"
+              items={[
+                { content: <><strong>9,847 visitors</strong> in the first two weeks</> },
+                { content: <><strong>35,000+ page views</strong> and counting</> },
+                { content: <><strong>2m 34s</strong> average visit duration</> },
+                { content: <><strong>2,000+ organic search visits</strong></> },
+                {
+                  content: (
+                    <>
+                      <strong>35 <Link href="https://github.com/switch-to-eu/switch-to.eu" className="text-brand-primary underline font-semibold">GitHub issues</Link></strong> created by the community
+                    </>
+                  )
+                }
+              ]}
+            />
           </div>
 
           <SectionDivider />
@@ -265,28 +296,49 @@ export const LaunchNewsletter = ({
               <strong>"We pay with our privacy"</strong> - how journalists described the hidden cost of <strong>Big Tech services</strong>.
             </Text>
 
-            <ul className="mb-4 text-sm pl-5">
-              <li className="mb-2 text-brand-text">
-                <Link href="https://www.gva.be/binnenland/antwerpse-broers-lanceren-website-die-switch-helpt-maken-van-amerikaanse-techgiganten-als-google-of-whatsapp-naar-europese-alternatieven-we-betalen-met-onze-privacy/67443663.html" className="text-brand-primary underline font-semibold">
-                  <strong>Gazet van Antwerpen</strong>
-                </Link> - "Antwerp brothers help switch from American tech giants"
-              </li>
-              <li className="mb-2 text-brand-text">
-                <Link href="https://www.standaard.be/podcast/switch-to.eu-het-platform-dat-alternatieven-biedt-voor-de-big-tech-uit-de-vs/68395325.html" className="text-brand-primary underline font-semibold">
-                  <strong>De Standaard Podcast</strong>
-                </Link> - "Switch-to.eu: The platform offering Big Tech alternatives"
-              </li>
-              <li className="mb-2 text-brand-text">
-                <Link href="https://www.hln.be/internet/weg-van-whatsapp-en-gmail-antwerpse-broers-maken-overstap-naar-europese-alternatieven-makkelijker-met-website~a57fbc3b/" className="text-brand-primary underline font-semibold">
-                  <strong>Het Laatste Nieuws</strong>
-                </Link> - "Away from WhatsApp and Gmail: making the switch easier"
-              </li>
-              <li className="mb-2 text-brand-text">
-                <Link href="https://www.made-in.be/antwerpen/antwerpse-broers-lanceren-website-die-switch-helpt-maken-van-big-tech-naar-europese-alternatieven-we-betalen-met-onze-privacy/" className="text-brand-primary underline font-semibold">
-                  <strong>Made in Belgium</strong>
-                </Link> - "From Big Tech to European alternatives"
-              </li>
-            </ul>
+            <EmailList
+              type="unordered"
+              className="mb-4"
+              itemClassName="text-sm"
+              items={[
+                {
+                  content: (
+                    <>
+                      <Link href="https://www.gva.be/binnenland/antwerpse-broers-lanceren-website-die-switch-helpt-maken-van-amerikaanse-techgiganten-als-google-of-whatsapp-naar-europese-alternatieven-we-betalen-met-onze-privacy/67443663.html" className="text-brand-primary underline font-semibold">
+                        <strong>Gazet van Antwerpen</strong>
+                      </Link> - "Antwerp brothers help switch from American tech giants"
+                    </>
+                  )
+                },
+                {
+                  content: (
+                    <>
+                      <Link href="https://www.standaard.be/podcast/switch-to.eu-het-platform-dat-alternatieven-biedt-voor-de-big-tech-uit-de-vs/68395325.html" className="text-brand-primary underline font-semibold">
+                        <strong>De Standaard Podcast</strong>
+                      </Link> - "Switch-to.eu: The platform offering Big Tech alternatives"
+                    </>
+                  )
+                },
+                {
+                  content: (
+                    <>
+                      <Link href="https://www.hln.be/internet/weg-van-whatsapp-en-gmail-antwerpse-broers-maken-overstap-naar-europese-alternatieven-makkelijker-met-website~a57fbc3b/" className="text-brand-primary underline font-semibold">
+                        <strong>Het Laatste Nieuws</strong>
+                      </Link> - "Away from WhatsApp and Gmail: making the switch easier"
+                    </>
+                  )
+                },
+                {
+                  content: (
+                    <>
+                      <Link href="https://www.made-in.be/antwerpen/antwerpse-broers-lanceren-website-die-switch-helpt-maken-van-big-tech-naar-europese-alternatieven-we-betalen-met-onze-privacy/" className="text-brand-primary underline font-semibold">
+                        <strong>Made in Belgium</strong>
+                      </Link> - "From Big Tech to European alternatives"
+                    </>
+                  )
+                }
+              ]}
+            />
           </div>
 
           <SectionDivider />

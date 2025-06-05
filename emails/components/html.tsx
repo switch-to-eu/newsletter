@@ -41,7 +41,8 @@ export const Html = ({ children, web, previewText }: { children: React.ReactNode
                 <Preview>{previewText}</Preview>
 
                 <Tailwind config={emailTailwindConfig}>
-                    <Body style={{ fontFamily: 'Hanken Grotesk' }} className="bg-brand-bg leading-normal m-0 p-0">
+
+                    <Body style={{ fontFamily: 'Hanken Grotesk, -apple-system, Segoe UI, Roboto, sans-serif' }} className="bg-brand-bg leading-normal m-0 p-0">
                         {children}
                     </Body>
                 </Tailwind>
