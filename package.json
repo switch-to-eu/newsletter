@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "email dev --port 3002",
     "build": "email export",
-    "app:dev": "react-router dev",
-    "app:build": "react-router build",
-    "app:start": "react-router-serve ./build/server/index.js",
+    "app:dev": "next dev --port 3001",
+    "app:build": "next build",
+    "app:start": "next start",
     "lint": "eslint ."
   },
   "repository": {
@@ -23,24 +23,21 @@
   },
   "homepage": "https://github.com/switch-to-eu/newsletter#readme",
   "dependencies": {
-    "@react-email/components": "^0.0.25",
-    "@react-email/render": "^1.0.1",
+    "@react-email/components": "^0.0.41",
+    "@react-email/render": "^1.1.2",
     "@react-email/tailwind": "^1.0.5",
-    "@react-router/dev": "^7.6.2",
-    "@react-router/node": "^7.6.2",
-    "isbot": "^5",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router": "^7.6.2"
+    "next": "^15.3.3",
+    "next-plausible": "^3.12.4",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "@vitejs/plugin-react": "^4.3.3",
+    "@types/node": "^20",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
     "eslint": "^9.25.1",
     "react-email": "4.0.16",
-    "typescript": "^5.6.3",
-    "vite": "^6.0.1"
+    "typescript": "^5.6.3"
   }
 }

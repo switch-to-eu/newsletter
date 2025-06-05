@@ -1,7 +1,7 @@
 import { TailwindConfig } from "@react-email/components";
 
 export const emailTailwindConfig: TailwindConfig = {
-  darkMode: false,
+  darkMode: "media",
   theme: {
     extend: {
       colors: {

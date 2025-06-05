@@ -7,7 +7,11 @@ export interface Newsletter {
   title: string;
   date: string;
   description: string;
-  Component: React.FunctionComponent<any>;
+  Component: React.FunctionComponent<{
+    previewText: string;
+    unsubscribeUrl: string;
+    web: boolean;
+  }>;
 }
 
 export const newsletters: Newsletter[] = [

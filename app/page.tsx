@@ -1,13 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router';
-import { newsletters } from '../data/newsletters';
-import type { MetaFunction } from "react-router";
+import Link from 'next/link';
+import { newsletters } from './data/newsletters';
+import type { Metadata } from "next";
 
-export const meta: MetaFunction = () => {
-    return [
-        { title: "Newsletter Archive - Switch-to.EU" },
-        { name: "description", content: "Monthly EU Tech Digest - Reclaim your digital independence. Browse our archive of European digital alternatives." },
-    ];
+export const metadata: Metadata = {
+    title: "Newsletter Archive - Switch-to.EU",
+    description: "Monthly EU Tech Digest - Reclaim your digital independence. Browse our archive of European digital alternatives.",
 };
 
 export default function Home() {
@@ -43,7 +41,7 @@ export default function Home() {
                     {newsletters.map((newsletter) => (
                         <li key={newsletter.id} className="newsletter-item">
                             <Link
-                                to={`/newsletter/${newsletter.id}`}
+                                href={`/newsletter/${newsletter.id}`}
                                 className="newsletter-link"
                             >
                                 <h3 className="newsletter-title">{newsletter.title}</h3>
@@ -112,14 +110,14 @@ export default function Home() {
                 <p>
                     © 2025 switch-to.eu - A project by{' '}
                     <a
-                        href="https://www.vinnie.studio"
+                        href="https://vinnie.studio"
                         style={{ color: '#3b82f6', fontWeight: 600 }}
                     >
                         Studio Vinnie
                     </a>{' '}
                     and{' '}
                     <a
-                        href="https://www.mvpeters.com/"
+                        href="https://mvpeters.com/"
                         style={{ color: '#3b82f6', fontWeight: 600 }}
                     >
                         MVPeters
