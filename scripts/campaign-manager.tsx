@@ -190,9 +190,9 @@ class MailcoachCampaignManager {
 
       // Ensure all required props are defined
       const finalProps = {
-        previewText: defaultProps.previewText!,
-        unsubscribeUrl: defaultProps.unsubscribeUrl!,
-        web: defaultProps.web!,
+        previewText: defaultProps.previewText,
+        unsubscribeUrl: defaultProps.unsubscribeUrl,
+        web: defaultProps.web,
       };
 
       // Render the React email component to HTML

@@ -1,3 +1,4 @@
+import React from 'react';
 import { Header, Footer, ServiceCard, SectionDivider, Font, EmailList } from './components';
 import { Html } from './components/html';
 
